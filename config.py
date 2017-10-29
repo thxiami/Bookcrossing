@@ -21,8 +21,7 @@ class Config:
 
     FLASKY_MAIL_SUBJECT_PREFIX = '[BookCrossing Admin]'
     FLASKY_MAIL_SENDER = 'BookCrossing Admin <tjulyw2015@163.com>'
-    # FLASKY_ADMIN = os.environ.get('BOOKCROSSING_ADMIN')
-    FLASKY_ADMIN = 'tjulyw2015@163.com'
+    FLASKY_ADMIN = os.environ.get('BOOKCROSSING_ADMIN')
 
     @staticmethod
     def init_app(app):
