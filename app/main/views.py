@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, current_app
 from flask_login import login_user, logout_user, login_required, \
     current_user
 from . import main
@@ -19,6 +19,14 @@ from datetime import *
 #    #dic_def = requests.get(url, params={'fields':param}).json()
 #    dic_def = requests.get(url).json()
 #    return dic_def
+
+@main.route('/test')
+def test():
+    app = current_app._get_current_object()
+    username = app.config.get('MAIL_USERNAME', '')
+    pwd = app.config.get('MAIL_PASSWORD', '')
+    return f"usr:{username} pwd:{pwd}"
+
 
 @main.route('/')
 def index():
